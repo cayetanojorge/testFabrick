@@ -38,7 +38,7 @@ public class UserController {
     public String detailsAcc() throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(defaultUrl + "/api/gbs/banking/v4.0/accounts?accountId=" + accountId))
+                .uri(URI.create(defaultUrl + "/api/gbs/banking/v4.0/accounts/" + accountId))
                 .GET()
                 .header("Content-Type", "application/json")
                 .header("Auth-Schema", "S2S")
@@ -59,7 +59,7 @@ public class UserController {
     public String balanceAcc() throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(defaultUrl + "/api/gbs/banking/v4.0/accounts?accountId=" + accountId + "/balance"))
+                .uri(URI.create(defaultUrl + "/api/gbs/banking/v4.0/accounts/" + accountId + "/balance"))
                 .GET()
                 .header("Content-Type", "application/json")
                 .header("Auth-Schema", "S2S")

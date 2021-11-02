@@ -1,14 +1,14 @@
 package it.example.testFabrick.model;
-
+/*
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Id;*/
 
-@Entity
+//@Entity
 public class User {
 
-    @Id
+    //@Id
     private Long id;
     private String receiverName;
     private String description;
