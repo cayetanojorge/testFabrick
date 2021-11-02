@@ -90,4 +90,27 @@ public class UserController {
                 HttpResponse.BodyHandlers.ofString());
         return response.body();
     }
+
+    /*
+    Retrieves the transactions of a specific cash account.
+     */
+    @GetMapping("/transactionsAccount")
+    public String transactionAcc() throws IOException, InterruptedException {
+        String fromDate= "2021-09-01";
+        String toDate= "2021-10-01";
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(defaultUrl + "/api/gbs/banking/v4.0/accounts/" + accountId +
+                        "/transactions?fromAccountingDate=" + fromDate + "&toAccountingDate=" + toDate))
+                .GET()
+                .header("Auth-Schema", "S2S")
+                .header("Api-Key", "FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP")
+                .header("Content-Type", "application/json")
+                .build();
+        // Send HTTP request
+        HttpResponse<String> response = client.send(request,
+                HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
 }
