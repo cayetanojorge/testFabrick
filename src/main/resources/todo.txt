@@ -1,0 +1,14 @@
+TODO
+- rendere tutto non statico
+- gestire con parametri da chiamata url
+- agg BigDecimal ove necessario
+- gestire Date in Balance.java per la data
+- fare test
+- usare log, non system.out
+- vedere UriComponentsBuilder per le url
+- usare ResponseEntityExceptionHandler
+- far sì che transferMoney2() abbia come parametro 
+  BodyInMoneyTransfer e che si inizializzi con json passato
+  tramite postman/insomnia e così anche
+  il metodo moneyTransferAccountFabrick() riceva BodyInMoneyTransfer
+- validare i parametri di input quando non sarà statico
